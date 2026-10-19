@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PERSONAL SCAN | كشف المعلومات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <div class="brand"><span class="eye">◉</span> PERSONAL <b>SCAN</b></div>
+    <div class="status"><span class="dot"></span> نظام محاكاة تجريبي</div>
+  </header>
+
+  <main>
+    <section id="home" class="screen hero">
+      <div class="eyebrow">[ نظام تحليل الهوية الرقمي ]</div>
+      <h1>كشف المعلومات<br><span>الشخصية</span></h1>
+      <p class="lead">هل تجرؤ على معرفة ما يمكن أن يكشفه تحليل إجاباتك؟</p>
+      <p class="sub">أجب عن بعض الأسئلة البسيطة وشاهد نتيجة محاكاة مخيفة.</p>
+      <button class="primary" id="startBtn">ابدأ التحليل <span>←</span></button>
+      <div class="features">
+        <span>◈ تجربة ترفيهية</span><span>◈ لا يتم جمع بيانات</span><span>◈ نتيجة خيالية</span>
+      </div>
+    </section>
+
+    <section id="quiz" class="screen hidden">
+      <div class="progress-row"><span>PERSONAL SCAN</span><span id="stepLabel">السؤال 1/4</span></div>
+      <div class="progress"><div id="quizProgress"></div></div>
+      <div class="question-wrap">
+        <div class="eyebrow">[ أدخل إجابتك للمتابعة ]</div>
+        <h2 id="questionTitle">ما لونك المفضل؟</h2>
+        <p id="questionHint">جميع الإجابات تستخدم داخل هذه التجربة فقط.</p>
+        <div id="answers" class="answers"></div>
+        <input id="textAnswer" class="text-answer hidden" type="text" maxlength="60" placeholder="اكتب إجابتك هنا">
+        <div class="nav-buttons">
+          <button class="secondary" id="backBtn">السابق</button>
+          <button class="primary" id="nextBtn">التالي ←</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="scanning" class="screen hidden scan-screen">
+      <div class="scan-ring"><span>◉</span></div>
+      <div class="eyebrow">[ جاري تنفيذ المحاكاة ]</div>
+      <h2>جاري تحليل إجاباتك...</h2>
+      <div class="scanbar"><div id="scanProgress"></div></div>
+      <div class="percent" id="percent">0%</div>
+      <ul class="scan-list">
+        <li id="scan1">فحص الإجابات</li>
+        <li id="scan2">تشغيل المؤثرات البصرية</li>
+        <li id="scan3">إنشاء نتيجة خيالية</li>
+      </ul>
+      <p class="tiny">هذه شاشة تمثيلية للمقلب، وليست فحصًا حقيقيًا للبيانات.</p>
+    </section>
+
+    <section id="result" class="screen hidden result-screen">
+      <div class="alert">⚠</div>
+      <div class="eyebrow">[ اكتملت المحاكاة ]</div>
+      <h1>تم العثور على <span>ملف الهدف!</span></h1>
+      <p class="sub">لقد انتهى التحليل... لكن انتبه: هذه النتيجة مزحة خيالية وليست معلومات حقيقية.</p>
+      <div class="result-card">
+        <div class="fake-avatar">?</div>
+        <div class="details">
+          <div><span>الاسم الكامل</span><strong id="resultName">عميل مجهول</strong></div>
+          <div><span>مكان السكن</span><strong id="resultCity">موقع غير معروف</strong></div>
+          <div><span>لونك المفضل</span><strong id="resultColor">غير محدد</strong></div>
+          <div><span>مستوى كشف الهوية</span><strong class="red">98% (تأثير بصري فقط)</strong></div>
+        </div>
+      </div>
+      <div class="disclaimer">🔒 لم يتم تحديد موقعك أو الوصول إلى معلوماتك الشخصية.</div>
+      <button class="primary" id="againBtn">إعادة التجربة ↻</button>
+    </section>
+  </main>
+  <footer>PERSONAL SCAN // تجربة ترفيهية آمنة — لا تجمع بيانات شخصية</footer>
+  <script src="script.js"></script>
+</body>
+</html>
