@@ -42,11 +42,20 @@ function startScan(){
   },170);
 }
 function showResult(){
-  const name=(answers[3]||'عميل مجهول').slice(0,60);
+  const name=(answers[3]||'زائر مجهول').slice(0,60);
   const color=answers[0]||'غير محدد';
-  document.getElementById('resultName').textContent=name+' (إجابة أدخلتها)';
+  document.getElementById('resultName').textContent=name+' (اسم أدخلته بنفسك)';
   document.getElementById('resultColor').textContent=color;
-  document.getElementById('resultCity').textContent='غير معروف — لا يتم تحديد الموقع';
+  document.getElementById('resultCity').textContent='مدينة تجريبية — غير محددة فعليًا';
+  // مثال عائلي خيالي؛ لا يجري الموقع أي بحث عن أفراد العائلة.
+  const details = document.querySelector('.details');
+  let family = document.getElementById('resultFamily');
+  if (!family) {
+    family = document.createElement('div');
+    family.id = 'resultFamily';
+    family.innerHTML = '<span>عدد الإخوة</span><strong>3 (مثال تجريبي)</strong>';
+    details.appendChild(family);
+  }
   show('result');
 }
 document.getElementById('againBtn').onclick=()=>{answers={};index=0;renderQuestion();show('home');};
